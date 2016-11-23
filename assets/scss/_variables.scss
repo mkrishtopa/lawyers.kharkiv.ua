@@ -1,0 +1,47 @@
+//
+// PROJECT-WIDE VARIABLES
+// -----------------------------
+
+// COLORS
+
+$gray-base:           #686868;
+$gray-dark:           #555555;
+$gray-light:          #cccccc;
+$gray-lighter:        #d9d9d9;
+$orange-base:         #fb786f;
+
+$text-default-color:  #343434;
+$link-default-color:  $orange-base;
+
+$page-default-bg:     #f2f2f2;
+$page-bg1:            #f9f9f9;
+$page-bg2:            #fcfcfc;
+
+$border-global-color: #f2f2f2;
+$border-dark-color:   #d9d9d9;
+
+// FONTS
+
+$fontArial:       Arial, sans-serif;
+$fontTahoma:      Tahoma, Verdana, Segoe, sans-serif;
+$fontPTSans:      'PT Sans', sans-serif;
+
+// Gotham Book    font-weight: 400;
+// Gotham Medium  font-weight: 500;
+// Gotham Bold    font-weight: 700;
+$fontGotham:      'Gotham SSm A', 'Gotham SSm B', sans-serif;
+
+// Miller Display
+// Miller DisplayRoman
+// Miller DisplayItalic
+// Miller TextBold
+$fontMillerDisplay:       serif;
+$fontMillerDisplayRoman:  MillerDisplay, serif;
+$fontMillerDisplayItalic: serif;
+$fontMillerTextBold:      serif;
+
+// Minion Pro
+$fontMinionPro:           'minion-pro', serif;
+
+// Socialico
+$fontSocialico:       serif;

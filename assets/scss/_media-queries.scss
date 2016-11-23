@@ -1,0 +1,67 @@
+// Extra small screen / phone
+$screen-xs:                  480px !default;
+$screen-xs-min:              $screen-xs !default;
+
+// Small screen / tablet
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+
+// Medium screen / desktop
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+
+// Large screen / wide desktop
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+
+// Largest screen / wide desktop
+$screen-lgs:                  1440px !default;
+$screen-lgs-min:              $screen-lgs !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+$media-highdensity: "only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+                    "only screen and (min--moz-device-pixel-ratio: 1.5)",
+                    "only screen and (-o-min-device-pixel-ratio: 3/2)",
+                    "only screen and (min-device-pixel-ratio: 1.5)";
+
+$media-print:       "print";
+
+
+// MOBILE-FIRST APPROACH
+
+// Define CSS for small (mobile) screens (0-479px), then apply @media for bigger resolutions:
+
+// 480 and up
+$media-extra-small-mf: "(min-width: #{$screen-xs})";
+
+// 768 and up
+$media-small-mf:       "(min-width: #{$screen-sm})";
+
+// 992 and up
+$media-medium-mf:      "(min-width: #{$screen-md})";
+
+// 1200 and up
+$media-large-mf:       "(min-width: #{$screen-lg})";
+
+// 1440 and up
+$media-largest-mf:     "(min-width: #{$screen-lgs})";
+
+
+// 0 - 479
+$media-zero-to-extra-small: "only screen and (min-width: 0) and (max-width: #{$screen-xs-min - 1})";
+
+// 480 - 767
+$media-extra-small: "only screen and (min-width: #{$screen-xs-min}) and (max-width: #{$screen-xs-max})";
+
+// 768 - 991
+$media-small:       "only screen and (min-width: #{$screen-sm-min}) and (max-width: #{$screen-sm-max})";
+
+// 992 - 1199
+$media-medium:      "only screen and (min-width: #{$screen-md-min}) and (max-width: #{$screen-md-max})";
+
+// 1200 and up
+$media-large:       "only screen and (min-width: #{$screen-lg-min})";
