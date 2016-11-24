@@ -1,5 +1,31 @@
 module.exports = function(grunt) {
   grunt.initConfig({
+    screenshot: {
+      default_options: {
+        options: {
+          path: 'screenshots',
+          files: [
+              {
+                  parallel: true,
+                  // compress: true,
+                  type: 'local',
+                  path: '.',
+                  port: 8080,
+                  src: 'index.html',
+                  dest: 'screenshot.jpg',
+                  // delay: 3000
+              }
+          ],
+          viewport: [
+            '320x500',
+            '480x500',
+            '768x500',
+            '992x500',
+            '1200x500',
+          ] // any (X)x(Y) size
+        }
+      }
+    },
     pkg: grunt.file.readJSON('package.json'),
     // sass to css
     sass: {
@@ -67,6 +93,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-screenshot');
 
   // grunt.registerTask('production', 'Makes all.', function() {
     // grunt.task.run(['sass', 'concat', 'cssmin', 'uglify', 'clean', 'wiredep']);
@@ -80,4 +107,5 @@ module.exports = function(grunt) {
   // });
 
   grunt.registerTask('default', ['dev']);
+  grunt.registerTask('scr', ['screenshot']);
 };
