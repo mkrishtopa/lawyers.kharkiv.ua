@@ -109,7 +109,7 @@ header.navbar {
       margin: 0 0 10px 0;
       text-align: right;
       font-family: $fontPTSans;
-      font-size: 26px;
+      font-size: 20px;
       line-height: 1.2;
       color: #d5b977;
       @media #{$media-extra-small}, #{$media-small}, #{$media-medium}, #{$media-large} {
@@ -253,7 +253,8 @@ header.navbar {
         a {
           color: #453f38;
           text-shadow: 0 1px 0 #f2f2f2;
-          &:hover {
+          &:hover,
+          &:focus {
             color: #000;
             background-color: transparent;
           }
@@ -374,7 +375,7 @@ section {
   background-color: #f0ebe7;
   .container {
     @media #{$media-medium}, #{$media-large} {
-      // min-height: 921px;
+      padding-bottom: 20px;
       background: url(/assets/img/bg-section2.jpg) no-repeat center top;
       background-size: auto 100%;
     }
@@ -790,6 +791,10 @@ section {
         li {
           margin-bottom: 20px;
           line-height: 20px;
+          font-size: 12px;
+          @media #{$media-small}, #{$media-medium}, #{$media-large} {
+            font-size: 16px;
+          }
           &:last-child {
             margin-bottom: 0;
           }

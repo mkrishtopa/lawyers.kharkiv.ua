@@ -13,13 +13,14 @@ if __name__ == "__main__":
 
     authorName  = form.getvalue('name').decode('utf8')
     fromEmail   = form.getvalue('email')
-    toEmail      = "michael.krishtopa@gmail.com"
+    # toEmail      = "michael.krishtopa@gmail.com"
+    toEmail      = "chornobay@ukr.net"
     date = time.ctime(time.time())
     subject = form.getvalue('subject').decode('utf8')
     message = form.getvalue('message').decode('utf8')
 
     mailBody = u"""From: %s <%s>
-To: Michael Krishtopa <%s>
+To: Чернобай Александр Евгеньевич <%s>
 Date: %s
 Subject: lawyers.kharkiv.ua лендинг: %s
 Content-Type: text/plain; charset=\"Windows-1251\"
