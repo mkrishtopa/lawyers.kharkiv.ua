@@ -1,32 +1,60 @@
 module.exports = function(grunt) {
   grunt.initConfig({
-    screenshot: {
-      default_options: {
-        options: {
-          path: 'screenshots',
-          files: [
-              {
-                  parallel: true,
-                  // compress: true,
-                  type: 'local',
-                  path: '.',
-                  port: 8080,
-                  src: 'index.html',
-                  dest: 'screenshot.jpg',
-                  // delay: 3000
-              }
-          ],
-          viewport: [
-            '320x500',
-            '480x500',
-            '768x500',
-            '992x500',
-            '1200x500',
-          ] // any (X)x(Y) size
-        }
+    pkg: grunt.file.readJSON('package.json'),
+
+    'ftp-deploy': {
+      build: {
+        auth: {
+          host: 'heddex.biz',
+          port: 21,
+          authKey: 'key1'
+        },
+        forceVerbose: true,
+        src: '/home/theo/work/2016.09.30\ -\ Адвокаты\ Дашко\ и\ Чернобай/git/',
+        dest: 'SitesRoot/lawyers.kharkiv.ua',
+        // authPath: '.ftppass',
+        exclusions: [
+          // 'path/to/source/folder/**/Thumbs.db',
+          '.git',
+          'bower_components',
+          'node_modules',
+          'assets/scss',
+          'assets/js',
+          'screenshots',
+          '.gitignore',
+          'Gruntfile.js',
+          'bower.js',
+          'package.json'
+        ]
       }
     },
-    pkg: grunt.file.readJSON('package.json'),
+
+    // screenshot: {
+    //   default_options: {
+    //     options: {
+    //       path: 'screenshots',
+    //       files: [
+    //           {
+    //               parallel: true,
+    //               // compress: true,
+    //               type: 'local',
+    //               path: '.',
+    //               port: 8080,
+    //               src: 'index.html',
+    //               dest: 'screenshot.jpg',
+    //               // delay: 3000
+    //           }
+    //       ],
+    //       viewport: [
+    //         '320x500',
+    //         '480x500',
+    //         '768x500',
+    //         '992x500',
+    //         '1200x500',
+    //       ] // any (X)x(Y) size
+    //     }
+    //   }
+    // },
     // sass to css
     sass: {
         dist: {
@@ -93,7 +121,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-screenshot');
+  // grunt.loadNpmTasks('grunt-screenshot');
+  grunt.loadNpmTasks('grunt-ftp-deploy');
 
   // grunt.registerTask('production', 'Makes all.', function() {
     // grunt.task.run(['sass', 'concat', 'cssmin', 'uglify', 'clean', 'wiredep']);
@@ -107,5 +136,7 @@ module.exports = function(grunt) {
   // });
 
   grunt.registerTask('default', ['dev']);
-  grunt.registerTask('scr', ['screenshot']);
+  // grunt.registerTask('scr', ['screenshot']);
+  grunt.registerTask('deploy', ['ftp-deploy']);
+
 };
