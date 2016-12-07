@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         auth: {
           host: 'heddex.biz',
           port: 21,
-          authKey: 'key1'
+//          authKey: 'key1'
         },
         forceVerbose: true,
         src: '/home/theo/work/2016.09.30\ -\ Адвокаты\ Дашко\ и\ Чернобай/git/',
@@ -16,7 +16,6 @@ module.exports = function(grunt) {
         exclusions: [
           // 'path/to/source/folder/**/Thumbs.db',
           '.git',
-          'bower_components',
           'node_modules',
           'assets/scss',
           'assets/js',
